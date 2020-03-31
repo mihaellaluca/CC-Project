@@ -1,15 +1,27 @@
 const express = require('express');
 const favicon = require('express-favicon');
 const dataAcces = require('./dataaccess.js');
+const express = require("express");
+const favicon = require("express-favicon");
+var bodyParser = require("body-parser");
+const dataAcces = require("./dataaccess.js");
 
 const app = express();
 const data = dataAcces();
 app.use(favicon(__dirname + '/download.png'));
+app.use(favicon(__dirname + "/download.png"));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // parse application/json
 
 app.get('/', async (req, res) => {
 
   res.status(200).send('Hello, world!').end();
   
+app.get("/", async (req, res) => {
+  res
+    .status(200)
+    .send("Hello, world!")
+    .end();
 });
 
 app.get('/users', async(req,res) => {
@@ -24,6 +36,7 @@ const PORT = process.env.PORT || 4040;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log('Press Ctrl+C to quit.');
+  console.log("Press Ctrl+C to quit.");
 });
 
 module.exports = app;
@@ -48,3 +61,35 @@ module.exports.getNumberOfUsers = (req, res) => {
   }); 
 };
 
+
+//CLOUD FUNCTION:
+
+module.exports.getTopFood = async (req, res) => {
+  var statistic = {};
+  var sortedStatistic = [];
+  var allUsers = await data.getAllUsers();
+
+  allUsers.forEach(user => {
+    if (user.Country === req.body.country) {
+      user.Favourites.forEach(food => {
+        if (food in statistic) {
+          statistic[food]++;
+        } else {
+          statistic[food] = 1;
+        }
+      });
+    }
+  });
+
+  for (var food in statistic) {
+    sortedStatistic.push([food, statistic[food]]);
+  }
+  sortedStatistic.sort((a, b) => {
+    return b[1] - a[1];
+  });
+
+  console.log(sortedStatistic);
+  res.writeHead(200, { "Content-Type": "application/json" });
+  res.write(JSON.stringify(sortedStatistic));
+  res.end();
+};
