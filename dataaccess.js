@@ -9,7 +9,6 @@ module.exports = function (){
         const query = datastore.createQuery('User');
         const [users] = await datastore.runQuery(query);
         return users;
-         
     },
     
     async addUser(data) {
@@ -22,22 +21,19 @@ module.exports = function (){
               Username: data.username,
               Country: data.country,
               Favourites: data.favourites
-
             }
         };
-        await datastore.save(user);
-        console.log(`Saved ${user.key.name}: ${user.data.FirstName}`);
+        return await datastore.save(user);
     },
 
-    async addInFavouritesById(data) { //data = userId, newElements[]
-        const userKey = datastore.key(['User', data.userId]);
+    async addInFavouritesById(userId, newElements) {
+        const userKey = datastore.key(['User', userId]);
         const user = await datastore.get(userKey);
-      
-        data.newElements.forEach(element => {
+        
+        newElements.forEach(element => {
           if(user[0].Favourites.includes(element) === false && element != null)
               user[0].Favourites.push(element);
         });
-      
         var objectUser = {
           FirstName: user[0].FirstName,
           LastName: user[0].LastName,
@@ -46,12 +42,10 @@ module.exports = function (){
           Favourites: user[0].Favourites
         };
 
-        await datastore.save({
+        return await datastore.save({
           key: userKey,
           data: objectUser
-        });
-        console.log(`User ${data.userId} updated successfully.`);
-
+        });       
     },
     
 
@@ -73,17 +67,16 @@ module.exports = function (){
             Name: data.name
           }
         };
-      
-        await datastore.save(restaurant);
-        console.log(`Saved ${restaurant.key.name}: ${restaurant.data.Name}`);
+  
+        return await datastore.save(restaurant);
       
     },
 
-    async addInMenuById(data) { //data = restaurantId, newElements[]
-        const restaurantKey = datastore.key(['Restaurant', data.restaurantId]);
+    async addInMenuById(restaurantId, newElements) { //data = restaurantId, newElements[]
+        const restaurantKey = datastore.key(['Restaurant', restaurantId]);
         const restaurant = await datastore.get(restaurantKey);
       
-        data.newElements.forEach(element => {
+        newElements.forEach(element => {
           if(restaurant[0].Menu.includes(element) === false && element != null)
               restaurant[0].Menu.push(element);
         });
@@ -94,18 +87,16 @@ module.exports = function (){
           Menu: restaurant[0].Menu,
           Name: restaurant[0].Name
         }
-        await datastore.save({
+        
+        return await datastore.save({
           key: restaurantKey,
           data: objectRestaurant
         });
-        console.log(`Restaurant ${data.restaurantId} updated successfully.`);
-
     },
 
     async deleteRestaurantById(restaurantId) {
         const restaurantKey = datastore.key(['Restaurant', restaurantId]);
-        await datastore.delete(restaurantKey);
-        console.log(`Restaurant ${taskId} deleted successfully.`);
+        return await datastore.delete(restaurantKey);
     }
 
   }

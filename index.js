@@ -1,24 +1,22 @@
 const express = require('express');
 const favicon = require('express-favicon');
-const app = express();
 const dataAcces = require('./dataaccess.js');
+
+const app = express();
 const data = dataAcces();
+app.use(favicon(__dirname + '/download.png'));
 
 app.get('/', async (req, res) => {
-  var user = {
-    FirstName: "First",
-    LastName: "Last",
-    Username: "User",
-    Country: "USA",
-    Favourites: ["Pizza"]
-  };
-  await data.addUser(user);
+
   res.status(200).send('Hello, world!').end();
-
-
+  
 });
 
-app.use(favicon(__dirname + '/download.png'));
+// app.get('/users', async(req,res) => {
+//   var allUsers = await data.getAllUsers();
+//   res.status(200).send(allUsers);
+// });
+
  
 
 
