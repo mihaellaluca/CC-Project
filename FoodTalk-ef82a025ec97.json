@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "foodtalk-272618",
+  "private_key_id": "ef82a025ec97b29e820ed023be45ddf95c69312e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCgW6MIiO7qUQpd\nsGpqlf+y+2c6Ib4ldPx5kHJrFpdfBctgFBFsy7P+2lfm7Qmmxx5C2wlKo7byhlEL\nFtYl1nRp7cp5B2xy8fqlBXl6LwBY0xcnNPEoXbPf+yrZK8wY3OMBAOyQDimVqyRC\nurp62Fh7IltrP2RI+5x/dfuYK7Od0TTL9vM6mK7n9MqskC+YFKmez+NvKzE9IZFC\nACa8CXIj+zGUY25xLkE4UL4l+tHOtSiFRWDYhzpdLxrqkvPoqF2XpHewSTRoBG/i\nC8dU2Kqwzvpe/plsr4dydLejoPJipmCFG0PotuhPg6bKMNN6pF84S3jnZQqDwq+I\nm3D/gHcXAgMBAAECggEAQzlnRWKyVcSXheM5GWm8gfnmsnYG0okSdpvZe49C8fDp\n62M+Us+qq4I5K3Pfge0jgH92i7XKMi2gt/dg2wfmUaoAIXC9RAqxOpDq9g/SI2qK\n4ELPfk6Z46HVuqkjrKCdAYSzp0hoonfWgarqFimwHh6vGGzAy9+/IagCSy6248dv\nxE6f/heKxIw3AP2Y9BEmbmee2oVGys+g3BjbJt966rxplZLC41tzhWeC3MQRgG1R\nIUOOixXs2BWBirVGN7anMTzbxewK3DGTiX+or2dT8e9+zhylb1O0dGHya3/Cdb2h\ns8XZUZio2h/8z7uP/r1Rmxqt4iAzCfz9r1li4eKEIQKBgQDdM14lrCKW8JRonslG\nze5xjrn0x9jQLcCnjLK/w5NPL/aVWvbXarws78XWG4vtkN6cAUEnsN5JFAhkO7Dn\naBxWfuJRqt2xiUIRxLfw9V85dDl+c1319oTSyj2EKtSHCcJMBvDIGzo+vosb5Lwv\nFQirS+aee+DyuX8GLQMvVlCHjwKBgQC5leQbgNyLlP0rkfSC/EKPNT6221CA2hhK\n0moD4vMqhG7eXOdNaaQNYVGPwqh0fyYgvUvqv4TKK0sc4T966PlReSRsn/ytQ6/K\nTdNJMmTuLYzPv3c75xbSxZAyu0oUtsu/M8tuTAFwMq89PlhMtnAl0k0aHBIfyHmY\nu0LPJpMT+QKBgQDAmx7KPMVtmpQPONvXvC54UKfY3T8LnhsXiWqHkZsuI3xZdnhj\nADxUAH/KO/guZqt/OZRrJBWZmkjoRhV2mW+7XQZhyB77nKGb6SelN3KwC2SYl4nk\nRsBG7vR7pfOilbvKCW0VQKgJxE5KfnPhpzYCObfYndM0ZpKVZRJV4JmEPwKBgQC5\nM0zc6X6tyLPRXCku4gCmGxOHtVskCwE9AbgMQto5bsmZHAszZJ3zQE/9b9tdzllF\nSMLO8+rXOdcObfZEeOP9GzBvOkUUvzxZXcrg++pfCZPA6ihZ3iYXllJtXhvyiezP\n1SdI3Y594gagzmudul42UCTjTmoDz7MQ6KcmRC94OQKBgQCWKazYrCH82k3TkEYS\no0SDOjD7NKEQ2pUYXb9k0pESdKSOLlym6TpRTkK5uzKLrHAOVpZCNbFBsQ0QZtMC\nrj61PXl6kT7gq1N3VWXL306jEAmv5udMMX6vIqUxfAfzjX7IidpIZFtZshEuD+Ry\nkU/ZYzJknPsW8HN25MbpysxWig==\n-----END PRIVATE KEY-----\n",
+  "client_email": "foodtalk@foodtalk-272618.iam.gserviceaccount.com",
+  "client_id": "118053280362387225583",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/foodtalk%40foodtalk-272618.iam.gserviceaccount.com"
+}
