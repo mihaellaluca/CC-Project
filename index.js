@@ -1,22 +1,18 @@
 const express = require('express');
 const favicon = require('express-favicon');
 const dataAcces = require('./dataaccess.js');
-const express = require("express");
-const favicon = require("express-favicon");
-var bodyParser = require("body-parser");
-const dataAcces = require("./dataaccess.js");
 
 const app = express();
 const data = dataAcces();
+
 app.use(favicon(__dirname + '/download.png'));
-app.use(favicon(__dirname + "/download.png"));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json()); // parse application/json
+
 
 app.get('/', async (req, res) => {
 
   res.status(200).send('Hello, world!').end();
-  
+});
+
 app.get("/", async (req, res) => {
   res
     .status(200)
@@ -41,6 +37,7 @@ app.listen(PORT, () => {
 
 module.exports = app;
 module.exports.getNumberOfUsers = (req, res) => {
+
   res.set('Access-Control-Allow-Origin', '*');
   data.getAllUsers().then((users)=> {
     let usersCount = {};
