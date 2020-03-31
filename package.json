@@ -14,5 +14,13 @@
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
     "serve-favicon": "^2.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihaellaluca/CC-Project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mihaellaluca/CC-Project/issues"
+  },
+  "homepage": "https://github.com/mihaellaluca/CC-Project#readme"
 }
