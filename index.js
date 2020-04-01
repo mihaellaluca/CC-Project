@@ -64,13 +64,14 @@ module.exports.getNumberOfUsers = (req, res) => {
 //CLOUD FUNCTION:
 
 module.exports.getTopFood = async (req, res) => {
-
+  res.set('Access-Control-Allow-Origin', '*');
+  let country = req.query.country;
   var statistic = {};
   var sortedStatistic = [];
   var allUsers = await data.getAllUsers();
 
   allUsers.forEach(user => {
-    if (user.Country === req.body.country) {
+    if (user.Country === country) {
       user.Favourites.forEach(food => {
         if (food in statistic) {
           statistic[food]++;
@@ -89,8 +90,7 @@ module.exports.getTopFood = async (req, res) => {
   });
 
   console.log(sortedStatistic);
-  res.set('Access-Control-Allow-Origin', '*');
-  res.writeHead(200, { "Content-Type": "application/json" });
-  res.write(JSON.stringify(sortedStatistic));
+  
+  res.status(200).send(JSON.stringify(sortedStatistic));
   res.end();
 };
