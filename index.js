@@ -36,6 +36,8 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
+//CLOUD FUNCTIONS 
 module.exports.getNumberOfUsers = (req, res) => {
 
   res.set('Access-Control-Allow-Origin', '*');
@@ -62,6 +64,7 @@ module.exports.getNumberOfUsers = (req, res) => {
 //CLOUD FUNCTION:
 
 module.exports.getTopFood = async (req, res) => {
+
   var statistic = {};
   var sortedStatistic = [];
   var allUsers = await data.getAllUsers();
@@ -86,6 +89,7 @@ module.exports.getTopFood = async (req, res) => {
   });
 
   console.log(sortedStatistic);
+  res.set('Access-Control-Allow-Origin', '*');
   res.writeHead(200, { "Content-Type": "application/json" });
   res.write(JSON.stringify(sortedStatistic));
   res.end();
